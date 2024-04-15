@@ -14,6 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+// Each Row in the List Page 
 import * as React from 'react';
 import { Types } from '../../common';
 import { Node } from '../../state';
@@ -37,7 +38,7 @@ import {
   BlockTimeColumn,
   BlockPropagationColumn,
   LastBlockColumn,
-  UptimeColumn,
+  UptimeColumn
 } from './';
 
 import './Row.css';

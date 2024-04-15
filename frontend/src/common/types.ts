@@ -42,6 +42,19 @@ export type CPUUse = Opaque<number, 'CPUUse'>;
 export type Bytes = Opaque<number, 'Bytes'>;
 export type BytesPerSecond = Opaque<number, 'BytesPerSecond'>;
 export type NetworkId = Opaque<string, 'NetworkId'>;
+export type CpuArchitecture = Opaque<string, 'CpuArchitecture'>;  //starts here
+export type Cpu = Opaque<number, 'Cpu'>;  
+export type CpuCores = Opaque<number, 'CpuCores'>;
+export type CpuVendor = Opaque<string, 'CpuVendor'>;
+export type VirtualMachine = boolean;
+export type Memory = Opaque<number, 'Memory'>;
+export type OperatingSystem = Opaque<string, 'OperatingSystem'>;
+export type Version= Opaque<string, 'Version'>;
+
+
+
+
+
 
 export type BlockDetails = [
   BlockNumber,

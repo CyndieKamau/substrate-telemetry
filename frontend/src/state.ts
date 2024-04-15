@@ -255,6 +255,14 @@ export interface StateSettings {
   blockpropagation: boolean;
   blocklasttime: boolean;
   uptime: boolean;
+  cpuarch: boolean;
+  cpucolumn: boolean;
+  cpucores: boolean;
+  vendor: boolean;
+  virtualmachine: boolean;
+  memory: boolean;
+  os: boolean;
+  version: boolean;
 }
 
 export interface State {

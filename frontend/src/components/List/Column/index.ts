@@ -33,3 +33,12 @@ export * from './BlockTimeColumn';
 export * from './BlockPropagationColumn';
 export * from './LastBlockColumn';
 export * from './UptimeColumn';
+export * from './CpuArchitectureColumn'; //starts here
+export * from './CpuCoresColumn';
+export * from './CpuVendorColumn';
+export * from './IsVirtualMachineColumn';
+export * from './MemoryColumn';
+export * from './CpuColumn';
+export * from './OperatingSystemColumn';
+export * from './VersionColumn';
+
