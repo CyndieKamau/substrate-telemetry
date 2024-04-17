@@ -6,7 +6,7 @@ import { Truncate, Tooltip, TooltipCopyCallback } from '../../';
 import icon from '../../../icons/file-binary.svg';
 
 export class CpuArchitectureColumn extends React.Component<ColumnProps> {
-    public static readonly label = 'CPU Arch';
+    public static readonly label = 'CPU Architecture';
     public static readonly icon = icon;
     public static readonly width = 154;
     public static readonly setting = 'cpuarch';

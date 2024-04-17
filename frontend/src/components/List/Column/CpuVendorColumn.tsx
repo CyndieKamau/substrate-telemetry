@@ -6,7 +6,7 @@ import { Truncate, Tooltip, TooltipCopyCallback } from '../../';
 import icon from '../../../icons/file-binary.svg';
 
 export class CpuVendorColumn extends React.Component<ColumnProps> {
-    public static readonly label = 'Vendor';
+    public static readonly label = 'CPU Vendor';
     public static readonly icon = icon;
     public static readonly width = 154;
     public static readonly setting = 'vendor';
