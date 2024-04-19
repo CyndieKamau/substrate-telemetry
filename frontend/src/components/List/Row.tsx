@@ -38,7 +38,14 @@ import {
   BlockTimeColumn,
   BlockPropagationColumn,
   LastBlockColumn,
-  UptimeColumn
+  UptimeColumn,
+  CpuArchitectureColumn,
+  CpuColumn,
+  CpuCoresColumn,
+  CpuVendorColumn,
+  MemoryColumn,
+  OperatingSystemColumn,
+  VersionColumn
 } from './';
 
 import './Row.css';
@@ -73,6 +80,13 @@ export class Row extends React.Component<RowProps, RowState> {
     BlockPropagationColumn,
     LastBlockColumn,
     UptimeColumn,
+    CpuArchitectureColumn,
+    CpuColumn,
+    CpuCoresColumn,
+    CpuVendorColumn,
+    MemoryColumn,
+    OperatingSystemColumn,
+    VersionColumn,
   ];
 
   private renderedChangeRef = 0;
