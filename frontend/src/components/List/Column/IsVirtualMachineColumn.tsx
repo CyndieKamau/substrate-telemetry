@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { Maybe } from '../../../common';
 import { ColumnProps } from './';
 import { Node } from '../../../state';
-import { Truncate, Tooltip, TooltipCopyCallback } from '../../';
 import icon from '../../../icons/file-binary.svg';
 
 export class IsVirtualMachineColumn extends React.Component<ColumnProps> {
@@ -10,37 +8,24 @@ export class IsVirtualMachineColumn extends React.Component<ColumnProps> {
     public static readonly icon = icon;
     public static readonly width = 154;
     public static readonly setting = 'virtualmachine';
-    public static readonly sortBy = ({ hash }: Node) => hash || '';
+    public static readonly sortBy = ({ VirtualMachine }: Node) => VirtualMachine || false;
   
-    private data: Maybe<string>;
-    private copy: Maybe<TooltipCopyCallback>;
+    private data: boolean;
+
   
     public shouldComponentUpdate(nextProps: ColumnProps) {
-      return this.data !== nextProps.node.hash;
+      return this.data !== nextProps.node.VirtualMachine;
     }
   
     render() {
-      const { hash } = this.props.node;
+      const { VirtualMachine } = this.props.node;
   
-      this.data = hash;
+      this.data = VirtualMachine;
   
       return (
-        <td className="Column" onClick={this.onClick}>
-          <Tooltip text={hash} position="right" copy={this.onCopy} />
-          <Truncate text={hash} chars={16} />
+        <td className="Column">
+          {VirtualMachine}
         </td>
       );
     }
-  
-    private onCopy = (copy: TooltipCopyCallback) => {
-      this.copy = copy;
-    };
-  
-    private onClick = (event: React.MouseEvent) => {
-      event.stopPropagation();
-  
-      if (this.copy != null) {
-        this.copy();
-      }
-    };
   }

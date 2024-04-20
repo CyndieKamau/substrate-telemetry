@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { Maybe } from '../../../common';
 import { ColumnProps } from './';
 import { Node } from '../../../state';
-import { Truncate, Tooltip, TooltipCopyCallback } from '../../';
 import icon from '../../../icons/file-binary.svg';
 
 export class MemoryColumn extends React.Component<ColumnProps> {
@@ -10,37 +8,24 @@ export class MemoryColumn extends React.Component<ColumnProps> {
     public static readonly icon = icon;
     public static readonly width = 154;
     public static readonly setting = 'memory';
-    public static readonly sortBy = ({ hash }: Node) => hash || '';
+    public static readonly sortBy = ({ Memory }: Node) => Memory|| '';
   
-    private data: Maybe<string>;
-    private copy: Maybe<TooltipCopyCallback>;
+    private data: string;
+
   
     public shouldComponentUpdate(nextProps: ColumnProps) {
-      return this.data !== nextProps.node.hash;
+      return this.data !== nextProps.node.Memory;
     }
   
     render() {
-      const { hash } = this.props.node;
+      const { Memory} = this.props.node;
   
-      this.data = hash;
+      this.data = Memory;
   
       return (
-        <td className="Column" onClick={this.onClick}>
-          <Tooltip text={hash} position="right" copy={this.onCopy} />
-          <Truncate text={hash} chars={16} />
+        <td className="Column">
+          {Memory} 
         </td>
       );
     }
-  
-    private onCopy = (copy: TooltipCopyCallback) => {
-      this.copy = copy;
-    };
-  
-    private onClick = (event: React.MouseEvent) => {
-      event.stopPropagation();
-  
-      if (this.copy != null) {
-        this.copy();
-      }
-    };
   }
